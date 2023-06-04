@@ -1,0 +1,4 @@
+gmake --jobs=1 boardsource/microdox/v2:fastbodin
+
+qmk flash -kb boardsource/microdox/v1 -km fastbodin
+qmk flash -kb boardsource/microdox/v2 -km fastbodin
