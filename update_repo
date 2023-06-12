@@ -4,11 +4,11 @@ git checkout master
 
 git rebase upstream/master
 
+git push origin master
+
 git checkout dev_branch
 
 git rebase upstream/master
-
-git push origin master
 
 git push --force origin dev_branch
 
