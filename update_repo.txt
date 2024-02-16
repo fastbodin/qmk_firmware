@@ -11,5 +11,3 @@ git checkout dev_branch
 git rebase upstream/master
 
 git push --force origin dev_branch
-
-
