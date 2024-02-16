@@ -12,10 +12,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_PDOT,        KC_1,           KC_2,           KC_3,           KC_PDOT,                    KC_NO,          KC_UNDS,        KC_COMM,        KC_DOT,         KC_SLSH,
                                     KC_NO,          KC_TRNS,        KC_NO,                      KC_SPC,         KC_RSFT,        KC_RCTL),
     [2] = LAYOUT_split_3x5_3(
-    LGUI(KC_DLR),   LGUI(KC_HASH),   LSFT(KC_TAB),   KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_VOLD,        KC_VOLU,        KC_NO,
+    LGUI(KC_DLR),   LGUI(KC_HASH),  LSFT(KC_TAB),   KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_VOLD,        KC_VOLU,        KC_NO,
     KC_NO,          KC_ENT,         KC_TAB,         KC_TRNS,        KC_NO,                      KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        KC_ENT,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_BRID,        KC_BRIU,        KC_NO,
-                                    KC_NO,          KC_LSFT,        KC_BSPC,                    KC_SPC,         KC_NO,          KC_RCTL),
+                                    KC_LGUI,        KC_LSFT,        KC_BSPC,                    KC_SPC,         KC_NO,          KC_RCTL),
     [3] = LAYOUT_split_3x5_3(
     LALT(KC_F),     KC_NO,          KC_NO,          KC_NO,          LGUI(KC_T),                 LCA(KC_A),      LCA(KC_W),      LCA(KC_S),      LCA(KC_D),      LALT(KC_C),
     KC_NO,          LGUI(KC_S),     KC_NO,          LGUI(KC_F),     KC_NO,                      LALT(KC_H),     LALT(KC_J),     LALT(KC_K),     LALT(KC_L),     KC_NO,
