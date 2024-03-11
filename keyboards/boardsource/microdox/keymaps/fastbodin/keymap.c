@@ -25,8 +25,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [2] = LAYOUT_split_3x5_3(
     OSM_G,          LGUI(KC_V),     LSFT(KC_TAB),   KC_NO,          KC_NO,                      LCTL(KC_Y),     KC_NO,          KC_VOLU,        KC_VOLD,        RCTL(KC_P),
     KC_ENT,         LGUI(KC_C),     KC_TAB,         KC_TRNS,        KC_NO,                      KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        KC_ENT,
-    KC_LGUI,        KC_NO,          KC_NO,          KC_NO,          KC_NO,                      LCTL(KC_N),     KC_NO,          KC_BRIU,        KC_BRID,        KC_NO,
-                                    KC_NO,          KC_LSFT,        KC_BSPC,                    RSFT_T(KC_SPC), KC_RCTL,        KC_NO
+    LGUI(KC_Z),     KC_NO,          KC_NO,          KC_NO,          KC_NO,                      LCTL(KC_N),     KC_NO,          KC_BRIU,        KC_BRID,        KC_NO,
+                                    KC_NO,          KC_LSFT,        KC_LGUI,                    RSFT_T(KC_SPC), KC_RCTL,        KC_NO
     ),
     // this layer is for aerospace nagivation
     [3] = LAYOUT_split_3x5_3(
