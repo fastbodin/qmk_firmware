@@ -21,6 +21,7 @@ const custom_shift_key_t custom_shift_keys[] = {
   {KC_VOLU, KC_VOLD},
 };
 
+
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
 
