@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_PMNS,        KC_7,           KC_8,           KC_9,           KC_PPLS,                 KC_GRV,         KC_CIRC,         KC_LPRN,        KC_RPRN,        KC_BSLS,
     KC_0,           KC_4,           KC_5,           KC_6,           KC_EQL,                  KC_ASTR,        KC_DLR,          KC_LBRC,        KC_RBRC,        KC_QUOT,
     KC_NO,          KC_1,           KC_2,           KC_3,           KC_NO,                   KC_NO,          KC_UNDS,         KC_COMM,        KC_DOT,         KC_SLSH,
-                                    KC_NO,          KC_TRNS,        KC_NO,                   KC_RSFT,        KC_RCTL,         KC_RGUI
+                                    KC_NO,          KC_TRNS,        KC_NO,                   KC_RSFT,        KC_RCTL,         MO(3)
     ),
     // general navigation
     [2] = LAYOUT_split_3x5_3(
@@ -34,6 +34,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LGUI(KC_DLR),  KC_NO,          KC_NO,          KC_NO,          KC_NO,                   KC_NO,          KC_BRID,        KC_BRIU,        KC_NO,          KC_NO,
                                    KC_NO,          KC_LSFT,        KC_BSPC,                 KC_RSFT,        KC_RCTL,        KC_RGUI
     ),
+   [3] = LAYOUT_split_3x5_3(
+   QK_BOOTLOADER,  KC_NO,          KC_NO,          KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_NO,          KC_NO,        KC_NO,
+   KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_NO,          KC_NO,        KC_NO,
+   KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_NO,          KC_NO,        KC_NO,
+                                   KC_NO,          KC_TRNS,        KC_NO,                      KC_NO,          KC_NO,          KC_TRNS
+   )
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -85,3 +91,4 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 //    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_NO,          KC_NO,        KC_NO,
 //                                    KC_NO,          KC_NO,          KC_NO,                      KC_NO,          KC_NO,          KC_NO
 //    )
+//
