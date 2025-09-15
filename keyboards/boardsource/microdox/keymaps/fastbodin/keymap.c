@@ -1,8 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#define OSM_G OSM(MOD_LGUI)
-#define OSM_S OSM(MOD_LSFT)
-
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
 #include "features/custom_shift_keys.h"
@@ -21,31 +18,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                    KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,
     KC_A,           KC_S,           KC_D,           LT(2, KC_F),    KC_G,                    KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,
     KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                    KC_N,           KC_M,           KC_COMM,        KC_DOT,         KC_SLSH,
-                                    KC_NO,          LT(1, KC_ESC),  KC_SPC,                  KC_RSFT,        KC_RCTL,        KC_NO
+                                    KC_LALT,        LT(1, KC_ESC),  KC_SPC,                  KC_RSFT,        KC_RCTL,        KC_RGUI
     ),
-    // this layer is for numbers, symbols, and math related things
+    // numbers, symbols, and math related things
     [1] = LAYOUT_split_3x5_3(
     KC_PMNS,        KC_7,           KC_8,           KC_9,           KC_PPLS,                 KC_GRV,         KC_CIRC,         KC_LPRN,        KC_RPRN,        KC_BSLS,
     KC_0,           KC_4,           KC_5,           KC_6,           KC_EQL,                  KC_ASTR,        KC_DLR,          KC_LBRC,        KC_RBRC,        KC_QUOT,
     KC_NO,          KC_1,           KC_2,           KC_3,           KC_NO,                   KC_NO,          KC_UNDS,         KC_COMM,        KC_DOT,         KC_SLSH,
-                                    KC_NO,          KC_TRNS,        KC_NO,                   KC_RSFT,        LT(3, KC_ENT),   KC_NO
+                                    KC_NO,          KC_TRNS,        KC_NO,                   KC_RSFT,        KC_RCTL,         KC_RGUI
     ),
-    // this layer is for general navigation and nvim
+    // general navigation
     [2] = LAYOUT_split_3x5_3(
-    KC_ESC,        LALT(KC_TAB),   LSFT(KC_TAB),   KC_NO,          KC_NO,                   RCTL(KC_Y),     KC_VOLD,        KC_VOLU,        KC_NO,          RCTL(KC_P),
-    KC_ENT,        OSM_G,          KC_TAB,         KC_TRNS,        KC_NO,                   KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        KC_ENT,
-    LGUI(KC_DLR),  KC_NO,          KC_NO,          KC_NO,          KC_NO,                   RCTL(KC_N),     KC_BRID,        KC_BRIU,        KC_NO,          KC_NO,
-                                   KC_NO,          KC_LSFT,        KC_BSPC,                 KC_RSFT,        KC_RCTL,        KC_NO
+    KC_ESC,        KC_NO,          LSFT(KC_TAB),   KC_NO,          KC_NO,                   KC_NO,          KC_VOLD,        KC_VOLU,        KC_NO,          KC_NO,
+    KC_ENT,        KC_NO,          KC_TAB,         KC_TRNS,        KC_NO,                   KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        KC_ENT,
+    LGUI(KC_DLR),  KC_NO,          KC_NO,          KC_NO,          KC_NO,                   KC_NO,          KC_BRID,        KC_BRIU,        KC_NO,          KC_NO,
+                                   KC_NO,          KC_LSFT,        KC_BSPC,                 KC_RSFT,        KC_RCTL,        KC_RGUI
     ),
-    //this layer navigates between workspaces in aerospace
-    [3] = LAYOUT_split_3x5_3(
-    QK_BOOT,        LALT(KC_W),     LALT(KC_E),     LALT(KC_R),     LALT(KC_T),             RALT(KC_Y),     RSA(KC_MINS),    RSA(KC_EQL),   RALT(KC_O),   RALT(KC_P),
-    LALT(KC_A),     LALT(KC_S),     LALT(KC_D),     LALT(KC_F),     LALT(KC_G),             RALT(KC_H),     RALT(KC_J),      RALT(KC_K),    RALT(KC_L),   OSM_S,
-    LALT(KC_Z),     LALT(KC_X),     LALT(KC_C),     LALT(KC_V),     LALT(KC_B),             RALT(KC_N),     RALT(KC_M),      RSFT(KC_COMM), KC_DOT,       RALT(KC_SLSH),
-                                    KC_NO,          KC_TRNS,        KC_NO,                  KC_NO,          KC_TRNS,         KC_NO
-    )
 };
-
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -79,7 +68,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(2, KC_ESC):
+        case LT(1, KC_ESC):
             // Immediately select the hold action when another key is pressed.
             return true;
         default:
